@@ -35,6 +35,8 @@ if ( ! isset( $content_width ) ) $content_width = 580;
 add_image_size( 'wpbs-featured', 780, 300, true );
 add_image_size( 'wpbs-featured-home', 970, 311, true);
 add_image_size( 'wpbs-featured-carousel', 970, 400, true);
+add_image_size( 'freigang-excerpt', 780, 300, true );
+
 
 /* 
 to add more sizes, simply copy a line from above 
@@ -62,8 +64,8 @@ you like. Enjoy!
 function wp_bootstrap_register_sidebars() {
     register_sidebar(array(
     	'id' => 'sidebar1',
-    	'name' => 'Main Sidebar',
-    	'description' => 'Used on every page BUT the homepage page template.',
+    	'name' => 'Left Sidebar',
+    	'description' => 'Left sidebar',
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -72,8 +74,8 @@ function wp_bootstrap_register_sidebars() {
     
     register_sidebar(array(
     	'id' => 'sidebar2',
-    	'name' => 'Homepage Sidebar',
-    	'description' => 'Used only on the homepage page template.',
+    	'name' => 'Right Sidebar',
+    	'description' => 'Used only when using the right sidebar',
     	'before_widget' => '<div id="%1$s" class="widget %2$s">',
     	'after_widget' => '</div>',
     	'before_title' => '<h4 class="widgettitle">',
@@ -83,7 +85,7 @@ function wp_bootstrap_register_sidebars() {
     register_sidebar(array(
       'id' => 'footer1',
       'name' => 'Footer 1',
-      'before_widget' => '<div id="%1$s" class="widget col-md-3 %2$s">',
+      'before_widget' => '<div id="%1$s" class="widget col-md-0 %2$s">',
       'after_widget' => '</div>',
       'before_title' => '<h4 class="widgettitle">',
       'after_title' => '</h4>',

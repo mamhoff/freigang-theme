@@ -18,6 +18,12 @@ body {
 	padding: 0;
 	margin: 0;
 	height: 100%;
+	font-family: "Gentium Basic", serif;
+	font-size: 16px;
+}
+
+a {
+   outline: 0;
 }
 
 #wrapper {
@@ -27,15 +33,14 @@ body {
 
 #container {
 	margin: 0px auto;
-	max-width: 990px;
+	max-width: 960px;
 }
 
 .head-row {
-	max-width: 990px;
+	max-width: 960px;
 	margin-top: 0;
-	position: fixed;
-	width: 100%;
-	min-height: 180px;
+/* 	position: fixed; We really do not want that.. */
+	min-height: 200px;
 	background: url('images/header.jpg');
 
 }
@@ -43,8 +48,85 @@ body {
 .fg-logo, 
 .fg-nav-primary {
 	background-color: #fff;
-	height: 140px;
+	height: 160px;
 	margin: 20px 0px;
+}
+
+.fg-logo {
+	padding: 10px 0px;
+}
+
+.fg-nav-primary {
+	padding: 10px 20px 10px 10px;
+}
+
+.fg-social {
+	padding-right: 0;
+}
+
+.fg-social-lang {
+	float: right;
+	margin-top: 20px;
+	background: #b4b1b1;
+}
+
+.fg-social-lang ul {
+	padding-left: 5px;
+	padding-right: 5px;	
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.fg-social-lang li {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.fg-social-lang ul:last-child {
+	margin-bottom: 5px;
+}
+
+
+.fg-social-lang ul img {
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.qtrans_language_chooser {
+	font-family: "Cabin";
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 12px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	margin-bottom: 3px;
+
+}
+
+.widget_qtranslate {
+	margin-bottom: 0;
+
+}
+
+.qtrans_language_chooser a {
+	color: white;
+}
+
+.qtrans_language_chooser .lang-en > a > span {
+	display: none;
+}
+.qtrans_language_chooser .lang-en > a:after {
+	content: "EN";
+}
+
+.qtrans_language_chooser .lang-de > a > span {
+	display: none;
+}
+.qtrans_language_chooser .lang-de > a:after {
+	content: "DE";
 }
 
 .fg-main-menu {
@@ -71,8 +153,8 @@ body {
 .fg-main-menu .sub-menu {
 	font-family: "Gentium Basic";
 	font-weight: 400;
-	font-size: 14px;
-	text-transform: lowercase;
+	font-size: 16px;
+	text-transform: uppercase;
 	padding: 0;
 }
 
@@ -99,18 +181,19 @@ body {
 }
 
 .fg-main-menu li.current_page_item>a:after {
-	font-size: 26px;
+	font-size: 21px;
 	line-height: 22px;
+	font-family: "Cabin";
 	content: "<";
 	color: red;
 }
 
 
 #content {
-	position: relative;
-    top: 180px;
+/*	position: relative;
+    top: 180px;  That is also taking away too much space. 
     left:0px;
-    right:0px;
+    right:0px; */
     bottom:80px;
     margin-bottom: 80px;
     overflow-y: scroll;   
@@ -118,7 +201,7 @@ body {
 }
 
 footer {
-	max-width: 990px;
+	max-width: 960px;
 	width: 100%;
 	height: 80px;
 	position: fixed;
@@ -127,3 +210,29 @@ footer {
 	background-color: #fff;
 
 }
+
+h1 {
+	font-family: "Cabin";
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 22px;
+}
+
+h2 {
+	font-family: "Cabin";
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.freigang {
+	font-family: "Cabin";
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+.page-header {
+	border: none;
+}
+

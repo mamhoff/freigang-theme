@@ -42,7 +42,7 @@
 		<div id="container" class="container">
 			<div class="row head-row">
 				<div class="col-md-3 fg-logo">
-					<img src="<?php bloginfo('template_directory') ?>/images/jac-logo.jpg" alt="Freigang Applications Consulting Logo"></img>
+					<img src="<?php bloginfo('template_directory'); ?>/images/jac-logo.jpg" alt="Freigang Applications Consulting Logo"></img>
 				</div>
 				<div class="col-md-6 fg-nav-primary">
 						<?php wp_nav_menu( 
@@ -51,11 +51,40 @@
 						    		'menu_class' => 'fg-main-menu',
 						    		'theme_location' => 'main_nav', /* where in the theme it's assigned */
 						    		'container' => 'fg-main-menu', /* container class */
-						    		// 'depth' => '2',  suppress lower levels for now 
+						    	 	'depth' => '2', /* suppress lower levels for now */
 						    	)
 						    ); ?>
 				</div>
 				<div class="col-md-3 fg-social">
+					<?php if ( is_active_sidebar( 'header_right' ) ) : ?>
+
+						<div class="fg-social-lang">
+							<?php dynamic_sidebar( 'header_right' ); ?>
+							<ul>
+								<li><a id="facebook" target="_blank" href="https://www.facebook.com/pages/Freigang-Applications-Consulting/600534169989366/">
+									<img src="<?php bloginfo('template_directory'); ?>/images/white_facebook.png" alt="FREIGANG Applications Consulting on Facebook"></a></li>
+								<li><a id="twitter" target="_blank" href="https://twitter.com/@FreigangAC/">
+									<img src="<?php bloginfo('template_directory'); ?>/images/white_twitter_bird.png" alt="FREIGANG Applications Consulting on Twitter"></a>
+								</li>
+								<li><a id="xing" target="_blank" href="https://www.xing.com/companies/freigangapplicationsconsulting/">
+									<img src="<?php bloginfo('template_directory'); ?>/images/white_xing.png" alt="FREIGANG Applications Consulting on Xing"></a>
+								</li>
+								<li><a id="linkedin" target="_blank" href="http://www.linkedin.com/company/3346395?trk=tyah&trkInfo=tas%3AFreigang%20Applications%20Consulting/">
+									<img src="<?php bloginfo('template_directory'); ?>/images/white_linkedin.png" alt="FREIGANG Applications Consulting on LinkedIn"></a>
+								</li>
+							</ul>
+						</div>
+
+					<?php else : ?>
+					<!-- This content shows up if there are no widgets defined in the backend. -->
+						
+						<div class="alert alert-message">
+						
+							<p><?php _e("Please activate some Widgets","wpbootstrap"); ?>.</p>
+						
+						</div>
+
+					<?php endif; ?>
 				</div>
 			</div>	
 		

@@ -1,7 +1,11 @@
 	
-					<?php if ( is_active_sidebar( 'sidebar1' ) ) : ?>
+					<?php if ( is_active_sidebar( 'sidebar1' ) ) :
+							wp_nav_menu( array(
+							    'level' => 3,
+							    'depth' => 1
+							));
 
-						<?php dynamic_sidebar( 'sidebar1' ); ?>
+						  dynamic_sidebar( 'sidebar1' ); ?>
 
 					<?php else : ?>
 

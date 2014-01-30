@@ -32,14 +32,22 @@ Template Name: Homepage
 						</header>
 						
 						<section class="row post_content">
+
+							<div class="col-md-3">
+
+								<?php get_sidebar('sidebar2'); // sidebar 2 ?>
 						
-							<div class="col-sm-8">
+							<div class="col-md-6">
 						
 								<?php the_content(); ?>
 								
 							</div>
+
+							<div class="col-md-3">
 							
-							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
+								<?php get_sidebar('sidebar2'); // sidebar 2 ?>
+
+							</div>
 													
 						</section> <!-- end article header -->
 						

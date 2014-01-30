@@ -1,14 +1,18 @@
 <?php
 /*
-Template Name: Left Sidebar Page
+Template Name: Right Sidebar Page
 */
 ?>
 
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
-            
-            	<?php get_sidebar(); // sidebar 1 ?>
+
+				<div id="sidebar2" class="col-sm-3" role="complementary">
+
+            	   	<?php get_sidebar(); // sidebar 1 ?>
+
+            	</div>
 			
 				<div id="main" class="col col-lg-9 clearfix" role="main">
 

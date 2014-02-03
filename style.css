@@ -12,8 +12,22 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 
 /* HEADS UP: Everything that you will normally find here can be found in the library/less/wp.less */
 
-@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic|Cabin:400,700); 
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,400italic|Open+Sans:400,700); 
 
+
+@font-face {
+  font-family: 'Clear Sans';
+  font-weight: 400;
+  src: url('./library/fonts/ClearSans-Regular.eot');
+  src: url('./library/fonts/ClearSans-Regular.eot?#iefix') format('embedded-opentype'), url('./library/fonts/ClearSans-Regular.woff') format('woff'), url('../fonts/ClearSans-Regular.ttf') format('truetype'), url('./library/fonts/ClearSans-Regular.svg#ClearSans-Regular') format('svg');
+}
+
+@font-face {
+  font-family: 'Clear Sans';
+  font-weight: 700;
+  src: url('./library/fonts/ClearSans-Bold.eot');
+  src: url('./library/fonts/ClearSans-Bold.eot?#iefix') format('embedded-opentype'), url('./library/fonts/ClearSans-Bold.woff') format('woff'), url('../fonts/ClearSans-Bold.ttf') format('truetype'), url('./library/fonts/ClearSans-Bold.svg#ClearSans-Bold') format('svg');
+}
 body {
 	padding: 0;
 	margin: 0;
@@ -28,7 +42,7 @@ a {
 }
 
 a:hover {
-	color: #119966;
+	color: #B4B1B1;
 	text-decoration: none;
 }
 
@@ -107,7 +121,7 @@ a:hover {
 }
 
 .qtrans_language_chooser {
-	font-family: "Cabin", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 300;
 	font-size: 12px;
 	line-height: 12px;
@@ -138,6 +152,32 @@ a:hover {
 	content: "DE";
 }
 
+ul.menu {
+	padding-left: 0;
+	list-style-type: none;
+	font-family: "Open Sans", sans-serif;
+	font-size: 16px;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+ul.menu > li {
+	border-top: 1px solid #000;
+}
+
+ul.menu > li:last-child {
+	border-bottom: 1px solid #000;
+}
+
+ul.sub-menu {
+	font-weight: 400;
+	list-style-type: none;
+	padding-left: 1em;
+}
+
+#sidebar1 .sub-menu { display: none; }
+#sidebar1 .current_page_item .sub-menu, .current_page_ancestor .sub-menu { display: block; }
+
 .fg-main-menu {
 	margin: 10px 0px;
 	border-top: 2px solid;
@@ -146,16 +186,18 @@ a:hover {
 }
 
 .fg-main-menu {
-	font-family: "Cabin", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
+	letter-spacing: 0.text;
 	text-transform: uppercase;
 	font-size: 22px;
-	line-height: 26px;
+	line-height: 27px;
 	padding:0;
 	margin: 10px 0px;
 }
 
-.fg-main-menu ul {
+.fg-main-menu ul,
+.fg-main-menu ul.sub-menu {
 	display: inline;
 }
 
@@ -165,11 +207,18 @@ a:hover {
 	font-size: 16px;
 	text-transform: uppercase;
 	padding: 0;
+	vertical-align: middle;
+
 }
 
 .fg-main-menu .sub-menu li {
 	display: inline;
-	margin-left: 10px;
+	margin-left: 0.1em;
+	vertical-align: 2px;
+}
+
+.fg-main-menu .sub-menu li.current_page_item {
+	display:inline;
 }
 
 .fg-main-menu > li {
@@ -184,53 +233,51 @@ a:hover {
 
 }
 
-.fg-main-menu li.current_page_item>a:after {
-	font-size: 21px;
+.fg-main-menu > li.current_page_item>a:after {
+	font-size: 20px;
 	line-height: 22px;
-	font-family: "Cabin", sans-serif;
-	content: "<";
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	content: " «";
 	color: red;
+	overflow: hidden;
+	vertical-align: 2px;
+
+}
+
+.fg-main-menu > li.current_page_item > ul > li.current_page_item > a:after {
+	font-size: 20px;
+	line-height: 22px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 700;
+	content: " ‹";
+	color: red;
+	overflow: hidden;
 }
 
 
-#content {
-/*	position: relative;
-    top: 180px;  That is also taking away too much space. 
-    left:0px;
-    right:0px; */
-    bottom:80px;
-    margin-bottom: 80px;
-    overflow-y: scroll;   
-    z-index: -1;  
-}
 
 footer {
 	max-width: 960px;
 	width: 100%;
-	height: 80px;
-	position: fixed;
-	bottom: 0;
-	margin: 0 auto;
-	background-color: #fff;
-
 }
 
 h1 {
-	font-family: "Cabin", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 22px;
 }
 
 h2 {
-	font-family: "Cabin", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 18px;
 }
 
 .freigang {
-	font-family: "Cabin", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	font-weight: 700;
 	text-transform: uppercase;
 	font-size: 18px;
@@ -262,5 +309,49 @@ h2.recent_posts_with_excerpts {
 .recent_posts_with_excerpts blockquote {
 	padding: 0;
 	border-left: 0;
+}
+
+.PackageContainer {
+	display: inline-block;
+	background-color: #b2b1b1;
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	font-family: "Gentium Basic";
+	margin-right: 20px;
+	margin-bottom: 20px;
+	color: #fff;
+	line-height: 1.1em;
+	float: left;
+
+}
+
+
+.PackageContainer strong {
+	font-family: "Open Sans";
+	font-size: 26px;
+}
+
+.PackageContainer .arrow {
+	font-family: "Open Sans";
+	font-size: 30px;
+	color: #fff;
+}
+
+.textwidget .test-caption {
+	font-family: "Open Sans";
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 3px;
+}
+
+.test-caption .country {
+	font-weight: 400;
+}
+
+.testimonial {
+	font-family: "Gentium Basic";
+	font-size: 22px;
+	line-height: 0.9em;
 }
 

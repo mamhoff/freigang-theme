@@ -7,10 +7,13 @@ Template Name: Left Sidebar Page
 <?php get_header(); ?>
 			
 			<div id="content" class="clearfix row">
-            
-            	<?php get_sidebar(); // sidebar 1 ?>
-			
-				<div id="main" class="col col-lg-9 clearfix" role="main">
+				<div id="sidebar1" class="col-md-3" role="complementary">
+
+            	   	<?php get_sidebar(); // sidebar 1 ?>
+
+            	</div>
+
+				<div id="main" class="col col-md-9 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 					
